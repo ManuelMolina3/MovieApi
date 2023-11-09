@@ -1,1 +1,3 @@
-<p>people-list works!</p>
+<div style="display: flex; flex-wrap: nowrap; overflow-x: auto; ">
+    <app-people-item class="ms-5 mt-5 col-2" *ngFor="let p of listaPersonas" [persona]="p"></app-people-item>
+</div>
