@@ -29,13 +29,14 @@ import { PageFavComponent } from './ui/page-fav/page-fav.component';
 import { PageCapitulosComponent } from './ui/page-capitulos/page-capitulos.component';
 import { PageUserComponent } from './ui/page-user/page-user.component';
 import { CapitulosItemComponent } from './components/capitulos-item/capitulos-item.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    HeaderComponent,
     MovieItemComponent,
     SeriesItemComponent,
     SeriesListComponent,
