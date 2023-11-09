@@ -4,6 +4,7 @@ import{HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { SeriesItemComponent } from './components/series-item/series-item.component';
 import { SeriesListComponent } from './components/series-list/series-list.component';
@@ -30,9 +31,11 @@ import { PageUserComponent } from './ui/page-user/page-user.component';
 import { CapitulosItemComponent } from './components/capitulos-item/capitulos-item.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+
     MovieItemComponent,
     SeriesItemComponent,
     SeriesListComponent,
@@ -57,6 +60,7 @@ import { CapitulosItemComponent } from './components/capitulos-item/capitulos-it
     PageCapitulosComponent,
     PageUserComponent,
     CapitulosItemComponent,
+
   ],
   imports: [
     BrowserModule,
