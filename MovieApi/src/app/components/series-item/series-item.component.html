@@ -1,7 +1,14 @@
-<div class="card" style="width: 14rem;">
-    <img class="card-img-top" [src]="getImgSerie()" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{serie.name}}</h5>
-        <p class="card-text">{{serie.popularity}}</p>
-    </div>
+<div
+  class="card"
+  [ngStyle]="{
+    width: '18rem',
+    height: '25rem',
+    'border-radius': '10%',
+    'background-image': 'url(' + getImgSerie() + ')'
+  }"
+>
+  <div class="card-body" style="color: white">
+    <h5 class="card-title">{{ serie.name }}</h5>
+    <p class="card-text">{{ serie.popularity }}</p>
   </div>
+</div>
