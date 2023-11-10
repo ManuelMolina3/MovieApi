@@ -11,6 +11,11 @@
 >
   <div class="card-body" style="color: white">
     <h3 class="card-title">{{ serie.name }}</h3>
-    <p class="card-text">{{ serie.popularity }}</p>
+    <ngb-rating
+      class="rating"
+      [(rate)]="currentRate"
+      [max]="5"
+      [readonly]="true"
+    ></ngb-rating>
   </div>
 </div>
