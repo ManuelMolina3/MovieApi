@@ -1,1 +1,5 @@
-<p>movie-list works!</p>
+<div style="display: flex; flex-wrap: nowrap; overflow-x: auto; ">
+    <app-movie-item class="ms-5 mt-5 col-2" *ngFor="let m of peliculaList" [pelicula]="m"></app-movie-item>
+
+</div>
+
