@@ -30,7 +30,7 @@ import { PageCapitulosComponent } from './ui/page-capitulos/page-capitulos.compo
 import { PageUserComponent } from './ui/page-user/page-user.component';
 import { CapitulosItemComponent } from './components/capitulos-item/capitulos-item.component';
 import { HeaderComponent } from './components/header/header.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -67,7 +67,8 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
