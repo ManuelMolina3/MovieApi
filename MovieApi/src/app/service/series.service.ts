@@ -16,6 +16,6 @@ export class SeriesService {
     return this.http.get<SerieResponse>(`${environment.baseUrlSeries}?${environment.apiKey}&&page=${page}`);
   }
   getSeriesDetalles(id: number): Observable<SeriesDetailsResponse>{
-    return this.http.get<SeriesDetailsResponse>(`${environment.baseUrlSeries}${id}?${environment.apiKey}`)
+    return this.http.get<SeriesDetailsResponse>(`${environment.baseUrlSeriesDetails}${id}?${environment.apiKey}`)
   }
 }
