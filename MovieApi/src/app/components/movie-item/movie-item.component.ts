@@ -22,7 +22,7 @@ export class MovieItemComponent implements OnInit {
   getMovieDetails(id: number): void {
     this.movieService.getDetallesPelicula(id).subscribe(details => {
       this.movieDetails = details;
-      this.currentRate = details.vote_average / 2;  // Divide por 2 aquí
+      this.currentRate = details.vote_average / 2;  
     });
 }
 

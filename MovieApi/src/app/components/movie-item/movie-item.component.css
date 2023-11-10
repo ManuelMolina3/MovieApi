@@ -4,12 +4,28 @@ button{
     color: white;
     border: solid;
     border-color: red;
+    
    
 }
 .rating{
     color: white;
+  
 }
-h3{
+h5{
     color: white;
+    height: 3px;
+    background-color: rgb(49, 48, 48);
+   
+}
+div .card-body {
+    margin-top: 80%;
+    margin-right: 30%;
+}
+.btn{
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+    color: white;
+    border: solid;
+    border-color: rgb(31, 30, 30);
 }
   
