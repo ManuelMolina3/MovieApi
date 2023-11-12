@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { MovieResponse } from '../models/movie-item.interface';
 import { environment } from 'src/environments/enviroments';
 import { MovieDetailsResponse } from '../models/movie-details.interface';
+import { MovieCharacterResponse } from '../models/movie-character';
+import { MovieVideoResponse } from '../models/movie-video';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +19,14 @@ export class MovieService {
   }
   getDetallesPelicula(id: number): Observable<MovieDetailsResponse>{
     return this.cliente.get<MovieDetailsResponse>(`${environment.baseUrlSeries}/movie/${id}?api_key=${environment.apiKey}`)
+  }
+  getDetallesPelicula1(id: string): Observable<MovieDetailsResponse>{
+    return this.cliente.get<MovieDetailsResponse>(`${environment.baseUrlSeries}/movie/${id}?api_key=${environment.apiKey}`)
+  }
+  getActoresPelicula(id:string):Observable<MovieCharacterResponse>{
+    return this.cliente.get<MovieCharacterResponse>(`${environment.baseUrlSeries}/movie/${id}/credits?api_key=${environment.apiKey}`)
+  }
+  getVideoPelicula(id:string):Observable<MovieVideoResponse>{
+    return this.cliente.get<MovieVideoResponse>(`${environment.baseUrlSeries}/movie/${id}/videos?api_key=${environment.apiKey}`)
   }
 }
