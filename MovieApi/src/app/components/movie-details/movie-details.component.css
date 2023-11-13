@@ -30,3 +30,10 @@ h3{
 #ngb{
     color: black;
 }
+.btn2{
+    background-color: rgb(30, 28, 28);
+    border-radius: 10px;
+    color: white;
+    border: solid;
+    border-color: rgb(30, 28, 28);
+}

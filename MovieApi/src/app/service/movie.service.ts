@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MovieResponse } from '../models/movie-item.interface';
+import { Movie, MovieResponse } from '../models/movie-item.interface';
 import { environment } from 'src/environments/enviroments';
 import { MovieDetailsResponse } from '../models/movie-details.interface';
 import { MovieCharacterResponse } from '../models/movie-character';
@@ -29,4 +29,11 @@ export class MovieService {
   getVideoPelicula(id:string):Observable<MovieVideoResponse>{
     return this.cliente.get<MovieVideoResponse>(`${environment.baseUrlSeries}/movie/${id}/videos?api_key=${environment.apiKey}`)
   }
+  getPeliculasPorGenero(id: string): Observable<MovieResponse> {
+    return this.cliente.get<MovieResponse>(`${environment.baseUrlSeries}/genre/${id}/movies?api_key=${environment.apiKey}`);
+  }
+  
+  
+
+  
 }
