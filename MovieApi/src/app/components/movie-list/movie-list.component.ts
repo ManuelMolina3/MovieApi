@@ -10,13 +10,16 @@ import { MovieService } from 'src/app/service/movie.service';
 })
 export class MovieListComponent implements OnInit{
   peliculaList: Movie [] = [];
+  favoritosList: any[] = []; 
   
   constructor (private movieService: MovieService) {}
   ngOnInit(): void {
     this.movieService.getMovieList().subscribe(response =>{
       this.peliculaList=response.results;
     });
+    this.favoritosList = this.movieService.getFavoritos();
   }
+  
 
 
 }

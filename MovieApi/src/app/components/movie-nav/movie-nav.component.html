@@ -1,1 +1,6 @@
-<p>movie-nav works!</p>
+
+<div *ngFor="let pelicula of favoritos">
+    <h2>{{ pelicula.title }}</h2>
+    <img [src]="pelicula.poster_path" alt="Imagen de la película">
+  </div>
+  

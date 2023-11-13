@@ -11,9 +11,9 @@ import { MovieDetailsResponse, Genre } from 'src/app/models/movie-details.interf
 export class MovieItemComponent implements OnInit {
   @Input() pelicula!: Movie;
   movieDetails!: MovieDetailsResponse;
-  currentRate!: number;  // Añade esta línea
+  currentRate!: number;  
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) { } 
 
   ngOnInit(): void {
     this.getMovieDetails(this.pelicula.id);
@@ -24,8 +24,11 @@ export class MovieItemComponent implements OnInit {
       this.movieDetails = details;
       this.currentRate = details.vote_average / 2;  
     });
-}
+  }
 
+  agregarFavorito(): void {  
+    this.movieService.agregarFavorito(this.pelicula);
+  }
 
   getGenres(): string {
     return this.movieDetails.genres.map((genre: Genre) => genre.name).join(', ');
