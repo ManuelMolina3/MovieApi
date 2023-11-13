@@ -7,6 +7,4 @@ export const environment = {
     baseUrlMovieDetails: 'https://api.themoviedb.org/3/movie/',
     baseUrlPeople: 'https://api.themoviedb.org/3/person/popular',
     baseUrlPeopleDetails: 'https://api.themoviedb.org/3/person/'
-
-
 };
