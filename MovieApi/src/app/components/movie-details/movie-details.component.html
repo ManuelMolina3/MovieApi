@@ -44,7 +44,7 @@
 <h3 class="mt-3 ms-5 text-dark">Ver trailer</h3>
 <h3 class="mt-3 ms-5 text-dark">Peliculas para ver con el mismo genero</h3>
 <div style="display: flex; flex-wrap: nowrap; overflow-x: auto; " id="movie-popular-row">
-  <div *ngFor="let pelicula of peliculaDe">
+  <div *ngFor="let pelicula of peliculaDe" (click)="onResultClick(pelicula)">
 
     <div class="card text-center mb-3 " [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500' + pelicula.poster_path  + ')'}" style="width: 18rem; background-size: 100% 100%; height: 400px; border-radius: 10px;"  >
       <div class="card-body mt-5 ">

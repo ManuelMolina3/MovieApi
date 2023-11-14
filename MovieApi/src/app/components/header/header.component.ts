@@ -2,6 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MovieDetailsResponse } from 'src/app/models/movie-details.interface';
 import { Movie } from 'src/app/models/movie-item.interface';
 import { MovieService } from 'src/app/service/movie.service';
+import {Subject} from 'rxjs';
+import { debounceTime, switchMap } from 'rxjs/operators';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+
+
+
 
 
 
@@ -10,23 +17,37 @@ import { MovieService } from 'src/app/service/movie.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
-  pelicula1!: Movie; 
-  p: Movie [] = [];
-  nombre = '';
-  title = '';
-  movieDetails!: MovieDetailsResponse;
-  constructor (private movieService: MovieService){}
-  ngOnInit(): void {
-    this.getNombre(this.pelicula1.id);
-  }
-  onKeyUp(pelicula: Movie) { // appending the updated value to the variable 
-    this.title += pelicula.title + ' | '; 
-  } 
+export class HeaderComponent {
+  searchTerm: string = '';
+  results: any[] = [];
+ 
+  searchSubject = new Subject<string>();
 
-  getNombre(id: number): void{
-    this.movieService.getDetallesPelicula(id).subscribe(res=>{
-      this.movieDetails=res;
-    })
+  constructor(private movieService: MovieService,private modalService: NgbModal, private router: Router) {
+    this.searchSubject.pipe(
+      debounceTime(300),
+      switchMap(searchTerm => this.movieService.multiSearch(searchTerm))
+    ).subscribe(([movies, tvShows, persons]) => {
+      this.results = [...movies.results, ...tvShows.results, ...persons.results];
+    });
+  }
+
+  onKeyUp(event: any) {
+    this.searchTerm = event?.target?.value;
+    if (this.searchTerm) {
+      this.searchSubject.next(this.searchTerm);
+    }
+  }
+  onResultClick(result: any) {
+    this.router.navigate(['/movie-details', result.id]);
+  }
+
+  isSearchEmpty(): boolean {
+    return this.searchTerm === '';
+  }
+  openModal(opmodal: any){
+  this.modalService.open(opmodal);
   }
 }
+
+
