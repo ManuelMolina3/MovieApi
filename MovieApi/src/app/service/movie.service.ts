@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Movie, MovieResponse } from '../models/movie-item.interface';
+import { MovieResponse } from '../models/movie-item.interface';
 import { environment } from 'src/environments/enviroments';
 import { MovieDetailsResponse } from '../models/movie-details.interface';
 import { MovieCharacterResponse } from '../models/movie-character';
@@ -13,6 +13,10 @@ import { MovieVideoResponse } from '../models/movie-video';
 export class MovieService {
 
   constructor(private cliente: HttpClient) { }
+
+  getMovieToHome(): Observable<MovieResponse> {
+    return this.cliente.get<MovieResponse>(`${environment.baseUrlMovie}?${environment.apiKey}`)
+  }
 
   getMovieList(page: number): Observable<MovieResponse>{
     return this.cliente.get<MovieResponse>(`${environment.baseUrlMovie}?${environment.apiKey}&&page=${page}`)

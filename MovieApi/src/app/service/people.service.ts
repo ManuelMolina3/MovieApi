@@ -13,6 +13,11 @@ import { PeopleTvShowResponse } from '../models/people-tv-show.interface';
 export class PeopleService {
 
   constructor(private cliente: HttpClient) { }
+
+  getPeopleToHome():Observable<PeopleResponse> {
+    return this.cliente.get<PeopleResponse>(`${environment.baseUrlPeople}?${environment.apiKey}`)
+  }
+
   getPeopleList(page: number):Observable<PeopleResponse>{
     return this.cliente.get<PeopleResponse>(`${environment.baseUrlPeople}?${environment.apiKey}&&page=${page}`)
   }

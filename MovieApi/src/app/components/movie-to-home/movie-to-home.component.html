@@ -1,0 +1,5 @@
+<div class="list d-flex justify-content-center">
+    <div class="list-group list-group-horizontal position-relative overflow-auto w-75 custom-scrollbar" onscroll="handleScroll(this)">
+        <app-movie-item *ngFor="let m of peliculaList" [pelicula]="m"></app-movie-item>
+    </div>
+</div>
