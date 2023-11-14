@@ -23,11 +23,7 @@ const routes: Routes = [
   {path: 'cap', component:PageCapitulosComponent},
   {path: '', pathMatch:'full', redirectTo: 'home'},
   {path: '**', component:PageNotFoundComponent}
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-const routes: Routes = [
-  {path: '', component: PageHomeComponent},
-    {path: 'inicio', component: PageHomeComponent},
-    {path: 'pelicula/:id', component: MovieDetailsComponent}
+
 ];
 
 @NgModule({

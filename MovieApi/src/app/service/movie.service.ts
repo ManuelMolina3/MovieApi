@@ -14,8 +14,8 @@ export class MovieService {
 
   constructor(private cliente: HttpClient) { }
 
-  getMovieList(): Observable<MovieResponse>{
-    return this.cliente.get<MovieResponse>(`${environment.baseUrlMovie}?${environment.apiKey}`)
+  getMovieList(page: number): Observable<MovieResponse>{
+    return this.cliente.get<MovieResponse>(`${environment.baseUrlMovie}?${environment.apiKey}&&page=${page}`)
   }
   getDetallesPelicula(id: number): Observable<MovieDetailsResponse>{
     return this.cliente.get<MovieDetailsResponse>(`${environment.baseUrlMovieDetails}${id}?${environment.apiKey}`)
