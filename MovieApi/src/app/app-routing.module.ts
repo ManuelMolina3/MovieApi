@@ -14,20 +14,16 @@ import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.compon
 const routes: Routes = [
   {path: 'home', component: PageHomeComponent}, 
   {path: 'movie', component: PageMovieComponent},
-  {path: 'movieDetails', component: PageMovieDatailsComponent},
+  {path: 'movieDetails/:id', component: PageMovieDatailsComponent},
   {path: 'serie', component: PageSeriesComponent},
-  {path: 'serieDetails', component:PageSeriesDatailsComponent},
+  {path: 'serieDetails/:id', component:PageSeriesDatailsComponent},
   {path: 'people', component: PagePeopleComponent},
-  {path: 'peopleDetails', component: PagePeopleDetailsComponent},
+  {path: 'peopleDetails/:id', component: PagePeopleDetailsComponent},
   {path: 'fav',component:PageFavComponent},
   {path: 'cap', component:PageCapitulosComponent},
   {path: '', pathMatch:'full', redirectTo: 'home'},
   {path: '**', component:PageNotFoundComponent}
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-const routes: Routes = [
-  {path: '', component: PageHomeComponent},
-    {path: 'inicio', component: PageHomeComponent},
-    {path: 'pelicula/:id', component: MovieDetailsComponent}
+
 ];
 
 @NgModule({

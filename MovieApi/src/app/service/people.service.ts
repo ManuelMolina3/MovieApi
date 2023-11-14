@@ -13,8 +13,8 @@ import { PeopleTvShowResponse } from '../models/people-tv-show.interface';
 export class PeopleService {
 
   constructor(private cliente: HttpClient) { }
-  getPeopleList():Observable<PeopleResponse>{
-    return this.cliente.get<PeopleResponse>(`${environment.baseUrlPeople}?${environment.apiKey}`)
+  getPeopleList(page: number):Observable<PeopleResponse>{
+    return this.cliente.get<PeopleResponse>(`${environment.baseUrlPeople}?${environment.apiKey}&&page=${page}`)
   }
   getPeopleDetails(id: number): Observable<PeopleDetailsResponse>{
     return this.cliente.get<PeopleDetailsResponse>(`${environment.baseUrlPeopleDetails}${id}?${environment.apiKey}`)
