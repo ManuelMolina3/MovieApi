@@ -25,16 +25,16 @@ export class MovieService {
     return this.cliente.get<MovieDetailsResponse>(`${environment.baseUrlMovieDetails}${id}?${environment.apiKey}`)
   }
   getDetallesPelicula1(id: string): Observable<MovieDetailsResponse>{
-    return this.cliente.get<MovieDetailsResponse>(`${environment.baseUrlSeries}/movie/${id}?api_key=${environment.apiKey}`)
+    return this.cliente.get<MovieDetailsResponse>(`${environment.baseUrlMovieDetails}${id}?${environment.apiKey}`)
   }
   getActoresPelicula(id:string):Observable<MovieCharacterResponse>{
-    return this.cliente.get<MovieCharacterResponse>(`${environment.baseUrlSeries}/movie/${id}/credits?api_key=${environment.apiKey}`)
+    return this.cliente.get<MovieCharacterResponse>(`${environment.baseUrlMovieDetails}${id}/credits?${environment.apiKey}`)
   }
   getVideoPelicula(id:string):Observable<MovieVideoResponse>{
-    return this.cliente.get<MovieVideoResponse>(`${environment.baseUrlSeries}/movie/${id}/videos?api_key=${environment.apiKey}`)
+    return this.cliente.get<MovieVideoResponse>(`${environment.baseUrlMovieDetails}${id}/videos?${environment.apiKey}`)
   }
   getPeliculasPorGenero(id: string): Observable<MovieResponse> {
-    return this.cliente.get<MovieResponse>(`${environment.baseUrlSeries}/genre/${id}/movies?api_key=${environment.apiKey}`);
+    return this.cliente.get<MovieResponse>(`${environment.baseUrlSeries}/genre/${id}/movies?${environment.apiKey}`);
   }
   
   
