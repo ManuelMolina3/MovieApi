@@ -1,7 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { BehaviorSubject, Observable,forkJoin  } from 'rxjs';
 import { Movie, MovieResponse } from '../models/movie-item.interface';
+
+import { Observable } from 'rxjs';
+import { MovieResponse } from '../models/movie-item.interface';
+
 import { environment } from 'src/environments/enviroments';
 import { MovieDetailsResponse } from '../models/movie-details.interface';
 import { MovieCharacterResponse } from '../models/movie-character';
@@ -20,11 +25,15 @@ export class MovieService {
   searchResults$ = this.searchResultsSource.asObservable();
   constructor(private cliente: HttpClient) { }
 
-  getMovieList(): Observable<MovieResponse>{
-    return this.cliente.get<MovieResponse>(`${environment.baseUrlSeries}/movie/popular?api_key=${environment.apiKey}`)
+  getMovieToHome(): Observable<MovieResponse> {
+    return this.cliente.get<MovieResponse>(`${environment.baseUrlMovie}?${environment.apiKey}`)
+  }
+
+  getMovieList(page: number): Observable<MovieResponse>{
+    return this.cliente.get<MovieResponse>(`${environment.baseUrlMovie}?${environment.apiKey}&&page=${page}`)
   }
   getDetallesPelicula(id: number): Observable<MovieDetailsResponse>{
-    return this.cliente.get<MovieDetailsResponse>(`${environment.baseUrlSeries}/movie/${id}?api_key=${environment.apiKey}`)
+    return this.cliente.get<MovieDetailsResponse>(`${environment.baseUrlMovieDetails}${id}?${environment.apiKey}`)
   }
   getDetallesPelicula1(id: string): Observable<MovieDetailsResponse>{
     return this.cliente.get<MovieDetailsResponse>(`${environment.baseUrlSeries}/movie/${id}?api_key=${environment.apiKey}`)

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SeriesDetailsResponse } from 'src/app/models/series-details.interface';
 import { Serie } from 'src/app/models/series-item.interface';
 import { SeriesService } from 'src/app/service/series.service';
 

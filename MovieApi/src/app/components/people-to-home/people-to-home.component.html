@@ -1,0 +1,5 @@
+<div class="list d-flex justify-content-center">
+    <div class="list-group list-group-horizontal position-relative overflow-auto w-75 custom-scrollbar" onscroll="handleScroll(this)">
+        <app-people-item *ngFor="let p of peopleList" [persona]="p"></app-people-item>
+    </div>
+</div>

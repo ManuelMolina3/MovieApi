@@ -13,16 +13,18 @@ import { Cast } from '../../models/movie-character';
 export class MovieListComponent implements OnInit{
   @Output() peliculaClick = new EventEmitter<number>();
   peliculaList: Movie [] = [];
- 
-  
-  
-  
+  paginaActual: number = 1;
+  NumeroDePaginas!: number;
   constructor (private movieService: MovieService) {}
   ngOnInit(): void {
-    
-    this.movieService.getMovieList().subscribe(response =>{
+    this.pagination();
+  }
+  pagination(){
+    this.movieService.getMovieList(this.paginaActual).subscribe(response =>{
       this.peliculaList=response.results;
+      this.NumeroDePaginas=response.total_pages;
     });
+  
   }
   peliculaClickLista(idPelicula: number){
     this.peliculaClick.emit(idPelicula);

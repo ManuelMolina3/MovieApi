@@ -9,12 +9,16 @@ import { PeopleService } from 'src/app/service/people.service';
 })
 export class PeopleListComponent implements OnInit{
 listaPersonas: People[]=[];
-
+paginaActual: number = 1;
+NumeroDePaginas!: number;
 constructor (private personaService: PeopleService){}
   ngOnInit(): void {
-    this.personaService.getPeopleList().subscribe(response=>{
+    this.pagination();
+  }
+  pagination(): void{
+    this.personaService.getPeopleList(this.paginaActual).subscribe(response=>{
       this.listaPersonas= response.results;
-     
+     this.NumeroDePaginas= response.total_pages;
     })
   }
 
