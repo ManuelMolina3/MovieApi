@@ -14,7 +14,7 @@ export class PageHomeComponent implements OnInit{
   peliculasList: Movie[]=[];
   peopleList: People[]=[];
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
 
 }
