@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-page-home',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent {
-
+  constructor(private router: Router) {}
+  peliculaClickLista(idPelicula: number){
+    
+    this.router.navigate(['/pelicula', idPelicula]);
+  }
 }
