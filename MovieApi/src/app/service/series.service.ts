@@ -5,6 +5,7 @@ import { SerieResponse } from '../models/series-item.interface';
 import { environment } from 'src/environments/enviroments';
 import { SeriesDetailsResponse } from '../models/series-details.interface';
 import { SeriePeopleResponse } from '../models/series-people.interface';
+import { TrailerSerieResponse } from '../models/trailer-serie.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,10 @@ export class SeriesService {
   getPeopleToSeries(id:number): Observable<SeriePeopleResponse>{
     return this.http.get<SeriePeopleResponse>(`${environment.baseUrlSeriesDetails}${id}/credits?${environment.apiKey}`)
   }
-  
+  getVideoSerie(id:number): Observable<TrailerSerieResponse>{
+    return this.http.get<TrailerSerieResponse>(`${environment.baseUrlSeriesDetails}${id}/videos${environment.apiKey}`)
+  }
+  getSeriesPorGenero(id: string): Observable<SerieResponse> {
+    return this.http.get<SerieResponse>(`${environment.baseUrlSeries}/genre/${id}/serie?${environment.apiKey}`);
+  }
 }

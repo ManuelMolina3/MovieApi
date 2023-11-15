@@ -34,7 +34,7 @@ export class MovieService {
     return this.cliente.get<MovieVideoResponse>(`${environment.baseUrlMovieDetails}${id}/videos?${environment.apiKey}`)
   }
   getPeliculasPorGenero(id: string): Observable<MovieResponse> {
-    return this.cliente.get<MovieResponse>(`${environment.baseUrlSeries}/genre/${id}/movies?${environment.apiKey}`);
+    return this.cliente.get<MovieResponse>(`${environment.baseUrlMovie}/genre/${id}/movies?${environment.apiKey}`);
   }
   
   
