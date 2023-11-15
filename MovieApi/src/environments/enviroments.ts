@@ -8,7 +8,7 @@ export const environment = {
 
 
     
-    baseUrlSeries: 'https://api.themoviedb.org/3'
+    baseUrlSeries: 'https://api.themoviedb.org/3',
 
 
 
