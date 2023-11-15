@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {BelongsToCollection, Genre, MovieDetailsResponse} from '../../models/movie-details.interface'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from 'src/app/service/movie.service';
 import { Cast, MovieCharacterResponse } from '../../models/movie-character';
 import { Movie } from '../../models/movie-item.interface';
@@ -20,7 +20,7 @@ export class MovieDetailsComponent implements OnInit{
   pelicula1!: Movie;
   video:Result [] = [];
   current!:number;
-  constructor (private route: ActivatedRoute,private peliculaService:MovieService ){}
+  constructor (private route: ActivatedRoute,private peliculaService:MovieService,private router: Router ){}
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
       
@@ -69,5 +69,8 @@ export class MovieDetailsComponent implements OnInit{
 
   getGenres(): string {
     return this.pelicula.genres.map((genre: Genre) => genre.name).join(', ');
+  }
+  onResultClick(result: any) {
+    this.router.navigate(['/movie-details', result.id]);
   }
 }

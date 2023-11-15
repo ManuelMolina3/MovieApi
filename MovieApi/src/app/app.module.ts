@@ -31,9 +31,13 @@ import { PageUserComponent } from './ui/page-user/page-user.component';
 import { CapitulosItemComponent } from './components/capitulos-item/capitulos-item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { FormsModule } from '@angular/forms';
+
 import { MovieToHomeComponent } from './components/movie-to-home/movie-to-home.component';
 import { SeriesToHomeComponent } from './components/series-to-home/series-to-home.component';
 import { PeopleToHomeComponent } from './components/people-to-home/people-to-home.component';
+
 
 
 @NgModule({
@@ -70,11 +74,16 @@ import { PeopleToHomeComponent } from './components/people-to-home/people-to-hom
 
   ],
   imports: [
+    
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
+   
     HttpClientModule,
+    
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import { SeriesDetailsResponse } from '../models/series-details.interface';
   providedIn: 'root'
 })
 export class SeriesService {
+  
 
   constructor(private http: HttpClient) { }
   getSeriesToHome():Observable<SerieResponse> {
@@ -21,4 +22,5 @@ export class SeriesService {
   getSeriesDetalles(id: number): Observable<SeriesDetailsResponse>{
     return this.http.get<SeriesDetailsResponse>(`${environment.baseUrlSeriesDetails}${id}?${environment.apiKey}`);
   }
+  
 }

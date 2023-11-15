@@ -12,6 +12,12 @@ import { PageFavComponent } from './ui/page-fav/page-fav.component';
 import { PageCapitulosComponent } from './ui/page-capitulos/page-capitulos.component';
 import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.component';
 const routes: Routes = [
+
+  {path: '', component: PageHomeComponent},
+    {path: 'inicio', component: PageHomeComponent},
+    {path: 'pelicula/:id', component: MovieDetailsComponent},
+    { path: 'movie-details/:id', component: MovieDetailsComponent }
+
   {path: 'home', component: PageHomeComponent}, 
   {path: 'movie', component: PageMovieComponent},
   {path: 'movieDetails/:id', component: PageMovieDatailsComponent},
@@ -23,6 +29,7 @@ const routes: Routes = [
   {path: 'cap', component:PageCapitulosComponent},
   {path: '', pathMatch:'full', redirectTo: 'home'},
   {path: '**', component:PageNotFoundComponent}
+
 
 ];
 
