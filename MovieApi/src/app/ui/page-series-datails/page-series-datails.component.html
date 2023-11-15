@@ -1,1 +1,16 @@
-<p>page-series-datails works!</p>
+<div [ngStyle]="{
+    'background-image': 'url(' + getFondo() + ')'
+
+}">
+    <div style="border-radius: 30%;">
+        <img [src]="getUrlImg()" alt="">
+    </div>
+    <div class="pre">
+        <h3>{{selectSerie.name}}</h3>
+        <h3>Categoria: {{getGenres()}}</h3>
+        <h3>Temporadas: {{selectSerie.number_of_seasons}}</h3>
+    </div>
+</div>
+<div>
+    <h2>Trailer</h2>
+</div>
