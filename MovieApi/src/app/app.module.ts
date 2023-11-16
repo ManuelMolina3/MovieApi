@@ -37,6 +37,7 @@ import { FormsModule } from '@angular/forms';
 import { MovieToHomeComponent } from './components/movie-to-home/movie-to-home.component';
 import { SeriesToHomeComponent } from './components/series-to-home/series-to-home.component';
 import { PeopleToHomeComponent } from './components/people-to-home/people-to-home.component';
+import { ApprovedComponent } from './components/approved/approved.component';
 
 
 
@@ -71,6 +72,7 @@ import { PeopleToHomeComponent } from './components/people-to-home/people-to-hom
     MovieToHomeComponent,
     SeriesToHomeComponent,
     PeopleToHomeComponent,
+    ApprovedComponent,
 
   ],
   imports: [

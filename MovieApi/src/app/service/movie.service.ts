@@ -2,10 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, Observable,forkJoin  } from 'rxjs';
-import { Movie, MovieResponse } from '../models/movie-item.interface';
+import {MovieResponse } from '../models/movie-item.interface';
 
-import { Observable } from 'rxjs';
-import { MovieResponse } from '../models/movie-item.interface';
 
 import { environment } from 'src/environments/enviroments';
 import { MovieDetailsResponse } from '../models/movie-details.interface';
@@ -17,9 +15,9 @@ import { MovieVideoResponse } from '../models/movie-video';
 })
 export class MovieService {
 
-  private MOVIE_URL = `https://api.themoviedb.org/3/search/movie?api_key=${environment.apiKey}&query=`;
-  private TV_URL = `https://api.themoviedb.org/3/search/tv?api_key=${environment.apiKey}&query=`;
-  private PERSON_URL = `https://api.themoviedb.org/3/search/person?api_key=${environment.apiKey}&query=`;
+  private MOVIE_URL = `https://api.themoviedb.org/3/search/movie?${environment.apiKey}&query=`;
+  private TV_URL = `https://api.themoviedb.org/3/search/tv?${environment.apiKey}&query=`;
+  private PERSON_URL = `https://api.themoviedb.org/3/search/person?${environment.apiKey}&query=`;
 
   private searchResultsSource = new BehaviorSubject<any[]>([]);
   searchResults$ = this.searchResultsSource.asObservable();
