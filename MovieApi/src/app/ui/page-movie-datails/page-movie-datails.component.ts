@@ -1,10 +1,11 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {BelongsToCollection, Genre, MovieDetailsResponse} from '../../models/movie-details.interface'
 import { ActivatedRoute, Router } from '@angular/router';
-import { MovieService } from 'src/app/service/movie.service';
+
 import { Cast, MovieCharacterResponse } from '../../models/movie-character';
 import { Movie } from '../../models/movie-item.interface';
 import { Result } from '../../models/movie-video';
+import { MovieService } from '../../service/movie.service';
 
 @Component({
   selector: 'app-page-movie-datails',

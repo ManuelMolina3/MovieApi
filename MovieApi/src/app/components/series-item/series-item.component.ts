@@ -2,6 +2,7 @@ import { Component, Input, OnInit} from '@angular/core';
 import { SeriesDetailsResponse } from 'src/app/models/series-details.interface';
 import { Serie } from 'src/app/models/series-item.interface';
 import { SeriesService } from 'src/app/service/series.service';
+import { Genre } from '../../models/movie-details.interface';
 
 @Component({
   selector: 'app-series-item',
@@ -25,6 +26,9 @@ export class SeriesItemComponent implements OnInit{
       this.serieDetails= details;
       this.currentRate = details.vote_average/ 2;  
     })
+  }
+  getGenres(): string {
+    return this.serieDetails.genres.map((genre: Genre) => genre.name).join(', ');
   }
 
 }
