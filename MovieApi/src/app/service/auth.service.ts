@@ -13,21 +13,16 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   getRequestToken(): Observable<GetRequestTokenResponse>{
-    return this.http.get<GetRequestTokenResponse>(`${environment.baseUrl}/autentication/token/new`, {
-      headers:{
-        'Authorization': `Bearer ${environment.tmbdtoken}`
-      }
-    });
+    return this.http.get<GetRequestTokenResponse>(`${environment.baseUrl}/authentication/token/new?${environment.apiKey}`);
   }
   createSession(token: string): Observable<CreateSessionResponse>{
-    return this.http.post<CreateSessionResponse>(`${environment.baseUrl}/authentication/session/new`,
+    return this.http.post<CreateSessionResponse>(`${environment.baseUrl}/authentication/session/new?${environment.apiKey}`,
     {
       request_token: token
-    }, 
+    },
     {
       headers:{
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${environment.tmbdtoken}` 
+        'Content-Type': 'application/json'
       }
     });
   }

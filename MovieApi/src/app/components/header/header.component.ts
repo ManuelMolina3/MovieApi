@@ -56,6 +56,10 @@ export class HeaderComponent {
       window.location.href= `https://www.themoviedb.org/authenticate/${localStorage.getItem('REQUEST_TOKEN')}?redirect_to=http://localhost:4200/approved`;
     });
   }
+  isUserLoggedIn(): boolean {
+    let id= localStorage.getItem('SESSION_ID');
+    return id ==null? true: false;
+  }
 }
 
 
