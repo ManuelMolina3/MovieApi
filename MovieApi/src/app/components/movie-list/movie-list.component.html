@@ -1,4 +1,4 @@
-<div class="row m-auto">
+<div class="row m-auto" [ngStyle]="esPaginaInicio() ? {'display': 'flex', 'flex-wrap': 'nowrap', 'overflow-x': 'auto'} : {}">
   <app-movie-item
     class="ms-5 mt-5 col-2"
     *ngFor="let m of peliculaList"
@@ -6,8 +6,8 @@
     (peliculaClick)="peliculaClickLista($event)"
   ></app-movie-item>
 </div>
-<nav class="d-flex justify-content-center mt-2">
-  <ngb-pagination
+
+  <ngb-pagination class="d-flex justify-content-center mt-2" *ngIf="esPaginaPeliculas()" class="d-flex justify-content-center mt-2"
     [collectionSize]="NumeroDePaginas"
     [(page)]="paginaActual"
     [maxSize]="3"
@@ -15,4 +15,4 @@
     [rotate]="true"
     (pageChange)="pagination()"
   ></ngb-pagination>
-</nav>
+

@@ -1,9 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Movie } from 'src/app/models/movie-item.interface';
-import { Genre } from 'src/app/models/series-details.interface';
-import { MovieService } from 'src/app/service/movie.service';
+
 import { BelongsToCollection } from '../../models/movie-details.interface';
 import { Cast } from '../../models/movie-character';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Movie } from '../../models/movie-item.interface';
+import { MovieService } from '../../service/movie.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -15,7 +16,7 @@ export class MovieListComponent implements OnInit{
   peliculaList: Movie [] = [];
   paginaActual: number = 1;
   NumeroDePaginas!: number;
-  constructor (private movieService: MovieService) {}
+  constructor (private movieService: MovieService,private router: Router, private route: ActivatedRoute) {}
   ngOnInit(): void {
     this.pagination();
   }
@@ -28,6 +29,12 @@ export class MovieListComponent implements OnInit{
   }
   peliculaClickLista(idPelicula: number){
     this.peliculaClick.emit(idPelicula);
+  }
+  esPaginaInicio(): boolean {
+    return this.router.url === '/home';
+  }
+  esPaginaPeliculas(): boolean {
+    return this.router.url === '/movie';
   }
 
 

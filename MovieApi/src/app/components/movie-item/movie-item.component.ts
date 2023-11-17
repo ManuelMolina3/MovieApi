@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Movie } from 'src/app/models/movie-item.interface';
-import { MovieService } from 'src/app/service/movie.service';
-import { MovieDetailsResponse, Genre } from 'src/app/models/movie-details.interface';
-import { Router } from '@angular/router';
+import { Genre, MovieDetailsResponse } from '../../models/movie-details.interface';
+import { Movie } from '../../models/movie-item.interface';
+import { MovieService } from '../../service/movie.service';
+
 
 @Component({
   selector: 'app-movie-item',

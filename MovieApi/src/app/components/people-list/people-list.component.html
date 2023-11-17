@@ -4,15 +4,18 @@
     *ngFor="let p of listaPersonas"
     [persona]="p"
   ></app-people-item>
+  
+  <ngb-pagination class="d-flex justify-content-center mt-2"
+  [collectionSize]="NumeroDePaginas"
+  [(page)]="paginaActual"
+  [maxSize]="3"
+  [pageSize]="20"
+  [rotate]="true"
+  (pageChange)="pagination()"
+  ></ngb-pagination>
 </div>
 
-<nav class="d-flex justify-content-center mt-2">
-  <ngb-pagination
-    [collectionSize]="NumeroDePaginas"
-    [(page)]="paginaActual"
-    [maxSize]="3"
-    [pageSize]="20"
-    [rotate]="true"
-    (pageChange)="pagination()"
-  ></ngb-pagination>
-</nav>
+
+
+
+

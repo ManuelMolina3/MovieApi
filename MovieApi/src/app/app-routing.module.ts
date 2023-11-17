@@ -15,8 +15,8 @@ const routes: Routes = [
 
   {path: '', component: PageHomeComponent},
     {path: 'inicio', component: PageHomeComponent},
-    {path: 'pelicula/:id', component: MovieDetailsComponent},
-    { path: 'movie-details/:id', component: MovieDetailsComponent }
+    {path: 'pelicula/:id', component: PageMovieDatailsComponent},
+    { path: 'movie-details/:id', component: PageMovieDatailsComponent },
 
   {path: 'home', component: PageHomeComponent}, 
   {path: 'movie', component: PageMovieComponent},

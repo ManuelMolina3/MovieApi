@@ -1,1 +1,19 @@
-<app-people-list></app-people-list>
+<div class="row m-auto">
+    <app-people-item
+      class="ms-5 mt-5 col-2"
+      *ngFor="let p of listaPersonas"
+      [persona]="p"
+    ></app-people-item>
+  </div>
+  
+  <nav class="d-flex justify-content-center mt-2">
+    <ngb-pagination
+      [collectionSize]="NumeroDePaginas"
+      [(page)]="paginaActual"
+      [maxSize]="3"
+      [pageSize]="20"
+      [rotate]="true"
+      (pageChange)="pagination()"
+    ></ngb-pagination>
+  </nav>
+  
