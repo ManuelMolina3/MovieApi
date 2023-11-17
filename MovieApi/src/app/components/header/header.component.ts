@@ -48,5 +48,3 @@ export class HeaderComponent {
   this.modalService.open(opmodal);
   }
 }
-
-

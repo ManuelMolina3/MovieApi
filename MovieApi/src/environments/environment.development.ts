@@ -10,4 +10,8 @@ export const environment = {
     baseUrl: 'https://api.themoviedb.org/3',
     tmbdtoken: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTE0NWJhZTMxYzQ4YmQ5MjFlMTNhZDc2N2I3ZmIzYSIsInN1YiI6IjY1NDBjNWI3NDU1N2EwMDBhZDEyMjA5ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.x78Kq6blQQYovk11Br3WEeuRk0_fd5QCuCvMoobF4To'
 
+
 };
+
+
+

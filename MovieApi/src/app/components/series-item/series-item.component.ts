@@ -1,7 +1,10 @@
 import { Component, Input, OnInit} from '@angular/core';
-import { Genre, SeriesDetailsResponse } from '../../models/series-details.interface';
+import { SeriesDetailsResponse, Genre } from '../../models/series-details.interface';
 import { Serie } from '../../models/series-item.interface';
 import { SeriesService } from '../../service/series.service';
+
+
+
 
 @Component({
   selector: 'app-series-item',

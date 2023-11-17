@@ -1,4 +1,5 @@
-<div class="row m-auto">
+
+<div class="row m-auto" [ngStyle]="esPaginaInicio() ? {'display': 'flex', 'flex-wrap': 'nowrap', 'overflow-x': 'auto'} : {}">
   <app-series-item
     class="col-3 mt-4"
     *ngFor="let serie of serieList"
@@ -15,4 +16,5 @@
     ></ngb-pagination>
   </nav>
 </div>
+
 

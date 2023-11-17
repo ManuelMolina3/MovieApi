@@ -14,6 +14,7 @@ export class SeriesToHomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.serieService.getSeriesToHome().subscribe(series =>{
+      debugger;
       this.serieList = series.results;
     })
   }

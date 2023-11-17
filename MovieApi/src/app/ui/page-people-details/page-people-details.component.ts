@@ -1,11 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PeopleDetailsResponse } from 'src/app/models/people-details.interface';
-import { CastPelicula } from 'src/app/models/people-movie.interface';
-import { CastTv } from 'src/app/models/people-tv-show.interface';
-import { PeopleService } from 'src/app/service/people.service';
+
 import { MovieService } from '../../service/movie.service';
 import { Genre, MovieDetailsResponse } from '../../models/movie-details.interface';
+import { PeopleDetailsResponse } from '../../models/people-details.interface';
+import { CastPelicula } from '../../models/people-movie.interface';
+import { CastTv } from '../../models/people-tv-show.interface';
+import { PeopleService } from '../../service/people.service';
 
 @Component({
   selector: 'app-page-people-details',
@@ -39,6 +40,5 @@ export class PagePeopleDetailsComponent implements OnInit {
   onResultClick(result: any) {
     this.router.navigate(['/movie-details', result.id]);
   }
-  
 
 }
