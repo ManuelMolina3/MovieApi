@@ -1,11 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MovieDetailsResponse } from 'src/app/models/movie-details.interface';
-import { Movie } from 'src/app/models/movie-item.interface';
-import { MovieService } from 'src/app/service/movie.service';
+
 import {Subject} from 'rxjs';
 import { debounceTime, switchMap } from 'rxjs/operators';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { MovieService } from '../../service/movie.service';
 
 
 

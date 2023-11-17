@@ -4,20 +4,29 @@
     [ngStyle]="{
       width: '18rem',
       height: '25rem',
-      filter: 'filter: alpha(opacity=50)',
-      opacity: 0.5,
+
       'border-radius': '7%',
       'background-image': 'url(' + getImgSerie() + ')'
     }"
   >
-    <div class="card-body" style="color: white">
-      <h3 class="card-title">{{ serie.name }}</h3>
+    <div class="card-body mt-5" style="color: white">
+      <button class="d-flex justify-content-start" href="#">
+        {{ getGenres() }}
+      </button>
+      
+      
       <ngb-rating
-        class="rating"
+      class="rating d-flex justify-content-start"
         [(rate)]="currentRate"
         [max]="5"
         [readonly]="true"
       ></ngb-rating>
+      <button
+        class="btn d-flex justify-content-start"
+        
+      >
+        {{ serie.name }}
+      </button>
     </div>
   </div>
 </div>

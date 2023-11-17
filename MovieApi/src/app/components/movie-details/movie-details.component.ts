@@ -1,10 +1,11 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {BelongsToCollection, Genre, MovieDetailsResponse} from '../../models/movie-details.interface'
 import { ActivatedRoute, Router } from '@angular/router';
-import { MovieService } from 'src/app/service/movie.service';
+
 import { Cast, MovieCharacterResponse } from '../../models/movie-character';
 import { Movie } from '../../models/movie-item.interface';
 import { Result } from '../../models/movie-video';
+import { MovieService } from '../../service/movie.service';
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
@@ -23,6 +24,7 @@ export class MovieDetailsComponent implements OnInit{
   constructor (private route: ActivatedRoute,private peliculaService:MovieService,private router: Router ){}
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
+      
       
     if (this.id != null) {
       this.peliculaService.getDetallesPelicula1(this.id).subscribe(response => {

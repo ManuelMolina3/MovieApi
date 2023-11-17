@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Serie } from 'src/app/models/series-item.interface';
-import { SeriesService } from 'src/app/service/series.service';
+import { Serie } from '../../models/series-item.interface';
+import { SeriesService } from '../../service/series.service';
+
 
 @Component({
   selector: 'app-series-list',

@@ -5,8 +5,6 @@
       [pelicula]="m"
       (peliculaClick)="peliculaClickLista($event)"
     ></app-movie-item>
-  </div>
-  
     <ngb-pagination class="d-flex justify-content-center mt-2" *ngIf="esPaginaPeliculas()" class="d-flex justify-content-center mt-2"
       [collectionSize]="NumeroDePaginas"
       [(page)]="paginaActual"
@@ -15,5 +13,8 @@
       [rotate]="true"
       (pageChange)="pagination()"
     ></ngb-pagination>
+  </div>
+  
+    
   
   
