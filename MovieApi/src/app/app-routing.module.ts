@@ -11,12 +11,15 @@ import { PagePeopleDetailsComponent } from './ui/page-people-details/page-people
 import { PageFavComponent } from './ui/page-fav/page-fav.component';
 import { PageCapitulosComponent } from './ui/page-capitulos/page-capitulos.component';
 import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.component';
+import { ApprovedComponent } from './components/approved/approved.component';
 const routes: Routes = [
 
   {path: '', component: PageHomeComponent},
+
     {path: 'inicio', component: PageHomeComponent},
     {path: 'pelicula/:id', component: PageMovieDatailsComponent},
     { path: 'movie-details/:id', component: PageMovieDatailsComponent },
+
 
   {path: 'home', component: PageHomeComponent}, 
   {path: 'movie', component: PageMovieComponent},
@@ -27,6 +30,7 @@ const routes: Routes = [
   {path: 'peopleDetails/:id', component: PagePeopleDetailsComponent},
   {path: 'fav',component:PageFavComponent},
   {path: 'cap', component:PageCapitulosComponent},
+  {path: 'approved', component:ApprovedComponent},
   {path: '', pathMatch:'full', redirectTo: 'home'},
   {path: '**', component:PageNotFoundComponent}
 

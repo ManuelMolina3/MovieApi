@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, Observable,forkJoin  } from 'rxjs';
-import { Movie, MovieResponse } from '../models/movie-item.interface';
+import {MovieResponse } from '../models/movie-item.interface';
 
 
 
