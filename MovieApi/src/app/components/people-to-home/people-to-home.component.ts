@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { People } from 'src/app/models/people-item.interface';
-import { PeopleService } from 'src/app/service/people.service';
+import { People } from '../../models/people-item.interface';
+import { PeopleService } from '../../service/people.service';
+
 
 @Component({
   selector: 'app-people-to-home',

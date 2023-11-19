@@ -1,17 +1,20 @@
-<div class="row m-auto">
+
+<div class="row m-auto" [ngStyle]="esPaginaInicio() ? {'display': 'flex', 'flex-wrap': 'nowrap', 'overflow-x': 'auto'} : {}">
   <app-series-item
     class="col-3 mt-4"
     *ngFor="let serie of serieList"
     [serie]="serie"
   ></app-series-item>
+  <nav class="d-flex justify-content-center mt-2">
+    <ngb-pagination
+      [collectionSize]="NumeroDePaginas"
+      [(page)]="paginaActual"
+      [maxSize]="3"
+      [pageSize]="20"
+      [rotate]="true"
+      (pageChange)="pagination()"
+    ></ngb-pagination>
+  </nav>
 </div>
-<nav class="d-flex justify-content-center mt-2">
-  <ngb-pagination
-    [collectionSize]="NumeroDePaginas"
-    [(page)]="paginaActual"
-    [maxSize]="3"
-    [pageSize]="20"
-    [rotate]="true"
-    (pageChange)="pagination()"
-  ></ngb-pagination>
-</nav>
+
+

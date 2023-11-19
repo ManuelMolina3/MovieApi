@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Serie } from 'src/app/models/series-item.interface';
-import { SeriesService } from 'src/app/service/series.service';
+import { Serie } from '../../models/series-item.interface';
+import { SeriesService } from '../../service/series.service';
+
 
 @Component({
   selector: 'app-series-to-home',
@@ -13,6 +14,7 @@ export class SeriesToHomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.serieService.getSeriesToHome().subscribe(series =>{
+      debugger;
       this.serieList = series.results;
     })
   }

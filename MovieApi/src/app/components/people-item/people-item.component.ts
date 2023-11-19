@@ -1,5 +1,6 @@
 import { Component,Input } from '@angular/core';
-import { KnownFor, People } from 'src/app/models/people-item.interface';
+import { People } from '../../models/people-item.interface';
+
 
 @Component({
   selector: 'app-people-item',
