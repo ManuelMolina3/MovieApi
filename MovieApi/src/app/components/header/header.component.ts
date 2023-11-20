@@ -1,3 +1,14 @@
+
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subject, debounceTime, switchMap } from 'rxjs';
+import { AccountResponse } from 'src/app/models/account.interface';
+import { AuthService } from 'src/app/service/auth.service';
+import { MovieService } from 'src/app/service/movie.service';
+
+
+
 import { Component} from '@angular/core';
 
 import {Subject} from 'rxjs';
@@ -7,6 +18,7 @@ import { Router } from '@angular/router';
 import { MovieService } from '../../service/movie.service';
 import { AccountResponse } from 'src/app/models/account.interface';
 import { AuthService } from 'src/app/service/auth.service';
+
 
 
 
@@ -77,4 +89,10 @@ export class HeaderComponent {
     let id = localStorage.getItem('SESSION_ID');
     return id == null ? true : false;
   }
+
+
 }
+
+
+
+
