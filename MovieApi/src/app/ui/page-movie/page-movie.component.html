@@ -1,6 +1,6 @@
 <div class="row m-auto" [ngStyle]="esPaginaInicio() ? {'display': 'flex', 'flex-wrap': 'nowrap', 'overflow-x': 'auto'} : {}">
     <app-movie-item
-      class="ms-5 mt-5 col-2"
+      class="ms-4 mt-5 col-2"
       *ngFor="let m of peliculaList"
       [pelicula]="m"
       (peliculaClick)="peliculaClickLista($event)"
