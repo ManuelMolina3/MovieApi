@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -7,6 +8,16 @@ import { AuthService } from 'src/app/service/auth.service';
 import { MovieService } from 'src/app/service/movie.service';
 
 
+
+import { Component} from '@angular/core';
+
+import {Subject} from 'rxjs';
+import { debounceTime, switchMap } from 'rxjs/operators';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import { MovieService } from '../../service/movie.service';
+import { AccountResponse } from 'src/app/models/account.interface';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 
@@ -79,7 +90,9 @@ export class HeaderComponent {
     return id == null ? true : false;
   }
 
+
 }
+
 
 
 

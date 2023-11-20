@@ -38,6 +38,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="#" [routerLink]="['/people']"
+            >People</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#" [routerLink]="['/people']"
             >Lista</a
           >
         </li>
@@ -56,6 +61,7 @@
           />
         </svg>
 
+
         <div (click)="doLogin()" [routerLink]="['/approved']" *ngIf="isUserLoggedIn()">
 
         <div
@@ -63,6 +69,9 @@
           [routerLink]="['/approved']"
           *ngIf="isUserLoggedIn()"
         >
+
+        <div (click)="doLogin()" [routerLink]="['/approved']">
+
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,16 +84,18 @@
             <path
               d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
             />
+
           </svg>
 
           <path
             d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
           />
+=======
+
+
         </svg>
-      </span>
     </div>
-  </div>
-</nav>
+
 
 <div class="d-flex justify-content-center mt-3" >
   <button style="border-radius: 30px;" type="button" (click)="openModal(opmodal)" class="btn btn-dark w-25 " data-bs-toggle="modal" data-bs-target="#searchModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -110,6 +121,9 @@
 
         </div>
         <div *ngIf="!isUserLoggedIn()">
+
+
+=======
 
           <p>{{ user.username }}</p>
         </div>
@@ -184,11 +198,14 @@
             </button>
           </div>
         </ng-template>
-      </span>
+
     </div>
   </div>
 
+
 </nav>
+
+=======
 
   <div class="modal-footer bg-dark">
     <button type="button" class="btn btn-outline-light" (click)="modal.close('Save click')">Save</button>
