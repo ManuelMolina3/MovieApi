@@ -1,27 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { MovieDetailsResponse } from 'src/app/models/movie-details.interface';
-import { Movie } from 'src/app/models/movie-item.interface';
-import { MovieService } from 'src/app/service/movie.service';
-import { Subject } from 'rxjs';
-import { debounceTime, switchMap } from 'rxjs/operators';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/service/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subject, debounceTime, switchMap } from 'rxjs';
 import { AccountResponse } from 'src/app/models/account.interface';
-=======
-
-import {Subject} from 'rxjs';
-import { debounceTime, switchMap } from 'rxjs/operators';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
-import { MovieService } from '../../service/movie.service';
+import { AuthService } from 'src/app/service/auth.service';
+import { MovieService } from 'src/app/service/movie.service';
 
 
 
 
 
->>>>>>> 245a29aa391af168b56caeb80de9d1826cef048b
+
+
+
 
 @Component({
   selector: 'app-header',
@@ -87,8 +78,8 @@ export class HeaderComponent {
     let id = localStorage.getItem('SESSION_ID');
     return id == null ? true : false;
   }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 245a29aa391af168b56caeb80de9d1826cef048b
+
+
+
